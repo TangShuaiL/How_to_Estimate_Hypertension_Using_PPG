@@ -1,0 +1,457 @@
+% ============================================================================
+% 参考文献库（bibtex + IEEEtran.bst）
+% ----------------------------------------------------------------------------
+% 用法：正文写 \cite{键名}，编译后自动出现在「参考文献」一节。
+%       未被 \cite 的条目不会出现在 PDF 里，但可以长期留在本文件当文献库存着。
+%
+% 新增条目流程：
+%   1) 把 PDF 放进 ..\papers\
+%   2) 用 Zotero / Google Scholar 导出 BibTeX（或告诉我，我批量转）
+%   3) 粘贴到本文件末尾，键名统一用「第一作者姓 + 年份 + 关键词」，全小写
+%   4) 正文 \cite{键名} 引用
+%
+% 注意：BibTeX 不认百分号注释。不要用 % 把某条条目「注释掉」，
+%       注释文字里也不要出现 at 符号紧跟条目类型（如 article/inproceedings），
+%       否则会被当成真条目解析并报 "missing a field name"。
+%
+% 未发表或在投的文献不要写在这里，放 refs_unpublished.bib。
+% 字段写法示例见 refs_example.bib。
+% ============================================================================
+
+% ---------------------------------------------------------------------------
+% 一、流行病学、PPG 生理机制与信号特征（模块 2/3）
+% ---------------------------------------------------------------------------
+
+@article{kario2024who,
+  author  = {Kario, Kazuomi and Okura, Ayako and Hoshide, Satoshi and Mogi, Masaki},
+  title   = {The {WHO} Global Report 2023 on Hypertension Warning the Emerging
+             Hypertension Burden in Globe and Its Treatment Strategy},
+  journal = {Hypertension Research},
+  volume  = {47},
+  number  = {5},
+  pages   = {1099--1102},
+  year    = {2024}
+}
+
+@article{islam2022wearable,
+  author  = {Islam, Sheikh Mohammed Shariful and Chow, Clara K. and
+             Daryabeygikhotbehsara, Reza and Subedi, Nitu and Rawstorn, Jonathan and
+             Tegegne, Teketo and Karmakar, Chandan and Siddiqui, Muhammad U. and
+             Lambert, Gavin and Maddison, Ralph},
+  title   = {Wearable Cuffless Blood Pressure Monitoring Devices:
+             A Systematic Review and Meta-Analysis},
+  journal = {European Heart Journal -- Digital Health},
+  volume  = {3},
+  number  = {2},
+  pages   = {323--337},
+  year    = {2022}
+}
+
+@article{kario2020management,
+  author  = {Kario, Kazuomi},
+  title   = {Management of Hypertension in the Digital Era: Small Wearable
+             Monitoring Devices for Remote Blood Pressure Monitoring},
+  journal = {Hypertension},
+  volume  = {76},
+  number  = {3},
+  pages   = {640--650},
+  year    = {2020}
+}
+
+@article{charlton2022wearable,
+  author  = {Charlton, Peter H. and Kyriacou, Panayiotis A. and Mant, Jonathan and
+             Marozas, Vaidotas and Chowienczyk, Phil and Alastruey, Jordi},
+  title   = {Wearable Photoplethysmography for Cardiovascular Monitoring},
+  journal = {Proceedings of the IEEE},
+  volume  = {110},
+  number  = {3},
+  pages   = {355--381},
+  year    = {2022}
+}
+
+@article{chen2024review,
+  author  = {Chen, Gang and Zou, Linglin and Ji, Zhong},
+  title   = {A Review: Blood Pressure Monitoring Based on {PPG} and Circadian Rhythm},
+  journal = {APL Bioengineering},
+  volume  = {8},
+  number  = {3},
+  pages   = {031501},
+  year    = {2024}
+}
+
+@article{allen2007photoplethysmography,
+  author  = {Allen, John},
+  title   = {Photoplethysmography and Its Application in Clinical
+             Physiological Measurement},
+  journal = {Physiological Measurement},
+  volume  = {28},
+  number  = {3},
+  pages   = {R1--R39},
+  year    = {2007},
+  doi     = {10.1088/0967-3334/28/3/R01}
+}
+
+@article{elgendi2019use,
+  author  = {Elgendi, Mohamed and Fletcher, Richard and Liang, Yongbo and Howard, Newton
+             and Lovell, Nigel H. and Abbott, Derek and Lim, Kenneth and Ward, Rabab},
+  title   = {The Use of Photoplethysmography for Assessing Hypertension},
+  journal = {npj Digital Medicine},
+  volume  = {2},
+  pages   = {60},
+  year    = {2019},
+  doi     = {10.1038/s41746-019-0136-7}
+}
+
+@article{millasseau2006contour,
+  author  = {Millasseau, Sandrine C. and Ritter, James M. and Takazawa, Kenji and
+             Chowienczyk, Philip J.},
+  title   = {Contour Analysis of the Photoplethysmographic Pulse Measured at the
+             Finger},
+  journal = {Journal of Hypertension},
+  volume  = {24},
+  number  = {8},
+  pages   = {1449--1456},
+  year    = {2006}
+}
+
+@article{reisner2008utility,
+  author  = {Reisner, Andrew and Shaltis, Phillip A. and McCombie, Devin and
+             Asada, H. Harry},
+  title   = {Utility of the Photoplethysmogram in Circulatory Monitoring},
+  journal = {Anesthesiology},
+  volume  = {108},
+  number  = {5},
+  pages   = {950--958},
+  year    = {2008},
+  doi     = {10.1097/ALN.0b013e31816c89e1}
+}
+
+% ---------------------------------------------------------------------------
+% 二、基于脉搏波传导时间 / 到达时间的方法
+% ---------------------------------------------------------------------------
+
+@article{chen2000continuous,
+  author  = {Chen, W. and Kobayashi, T. and Ichikawa, S. and Takeuchi, Y. and Togawa, T.},
+  title   = {Continuous Estimation of Systolic Blood Pressure Using the Pulse
+             Arrival Time and Intermittent Calibration},
+  journal = {Medical and Biological Engineering and Computing},
+  volume  = {38},
+  number  = {5},
+  pages   = {569--574},
+  year    = {2000}
+}
+
+@inproceedings{poon2005cuffless,
+  author    = {Poon, Carmen C. Y. and Zhang, Yuan-Ting},
+  title     = {Cuff-Less and Noninvasive Measurements of Arterial Blood Pressure
+               by Pulse Transit Time},
+  booktitle = {Proc. 27th Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC)},
+  pages     = {5877--5880},
+  year      = {2005}
+}
+
+% ---------------------------------------------------------------------------
+% 三、波形特征提取、特征选择与传统回归方法（模块 3/4）
+% ---------------------------------------------------------------------------
+
+@article{lin2020investigating,
+  author  = {Lin, Wan-Hsien and Li, Xiaozheng and Li, Yuan and Li, Guanglin and Chen, Fei},
+  title   = {Investigating the Physiological Mechanisms of the Photoplethysmogram
+             Features for Blood Pressure Estimation},
+  journal = {Physiological Measurement},
+  volume  = {41},
+  number  = {4},
+  pages   = {044003},
+  year    = {2020}
+}
+
+@article{yang2020estimation,
+  author  = {Yang, Seungman and Sohn, Joonnyong and Lee, Sanghyun and Lee, Jongcun and
+             Kim, Hee Chan},
+  title   = {Estimation and Validation of Arterial Blood Pressure Using
+             Photoplethysmogram Morphology Features in Conjunction with Pulse
+             Arrival Time in Large Open Databases},
+  journal = {IEEE Journal of Biomedical and Health Informatics},
+  volume  = {25},
+  number  = {4},
+  pages   = {1018--1030},
+  year    = {2021}
+}
+
+@article{haddad2022continuous,
+  author  = {Haddad, Sami and Boukhayma, Assim and Caizzone, Antonino},
+  title   = {Continuous {PPG}-Based Blood Pressure Monitoring Using
+             Multi-Linear Regression},
+  journal = {IEEE Journal of Biomedical and Health Informatics},
+  volume  = {26},
+  number  = {5},
+  pages   = {2096--2105},
+  year    = {2022}
+}
+
+@article{cisnal2024robust,
+  author  = {Cisnal, Ana and Li, Yanke and Fuchs, Bertram and Ejtehadi, Mehdi and
+             Riener, Robert and Paez-Granados, Diego},
+  title   = {Robust Feature Selection for {BP} Estimation in Multiple Populations:
+             Towards Cuffless Ambulatory {BP} Monitoring},
+  journal = {IEEE Journal of Biomedical and Health Informatics},
+  volume  = {28},
+  number  = {10},
+  pages   = {5768--5779},
+  year    = {2024},
+  doi     = {10.1109/JBHI.2024.3411693},
+  note    = {配套开源库 VitalPy: https://github.com/SCAI-Lab/VitalPy}
+}
+
+% ---------------------------------------------------------------------------
+% 四、深度学习 / 多模态方法
+% ---------------------------------------------------------------------------
+
+@inproceedings{liu2019cuffless,
+  author    = {Liu, Zeng-Ding and Miao, Fen and Wang, Rui-Qi and Liu, Jia and
+               Wen, Bo and Li, Ye},
+  title     = {Cuff-Less Blood Pressure Measurement Based on Deep Convolutional
+               Neural Network},
+  booktitle = {Proc. 41st Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC)},
+  pages     = {3775--3778},
+  year      = {2019}
+}
+
+@inproceedings{zheng2024bp3,
+  author    = {Zheng, Zixin and Liang, Yumeng and Lyu, Rui and Bao, Junjie and
+               Huang, Yiwen and Zhou, Anfu and Ma, Huadong and Wang, Jingjia and
+               Meng, Xiangbin and Shao, Chunli and Tang, Yida and Zhang, Qian},
+  title     = {{BP3}: Improving Cuff-Less Blood Pressure Monitoring Performance by
+               Fusing {mmWave} Pulse Wave Sensing and Physiological Factors},
+  booktitle = {Proc. 22nd ACM Conf. Embedded Networked Sensor Systems (SenSys)},
+  pages     = {730--743},
+  year      = {2024}
+}
+
+@article{mieloszyk2022comparison,
+  author  = {Mieloszyk, Rebecca J. and others},
+  title   = {A Comparison of Wearable Tonometry, Photoplethysmography, and
+             Electrocardiography for Cuffless Measurement of Blood Pressure in an
+             Ambulatory Setting},
+  journal = {IEEE Journal of Biomedical and Health Informatics},
+  volume  = {26},
+  number  = {7},
+  pages   = {2864--2875},
+  year    = {2022}
+}
+
+@article{mekonnen2024accurate,
+  author  = {Mekonnen, Bitewulign Kassa and Lu, Wei-Ru and Hsieh, Tung-Han and
+             Chu, Justin and Yang, Fu-Liang},
+  title   = {Accurate and 30-Plus Days Reliable Cuffless Blood Pressure Measurements
+             with 9-Minutes Personal Photoplethysmograph Data and Mixed Deduction
+             Learning},
+  journal = {Scientific Reports},
+  volume  = {14},
+  year    = {2024}
+}
+
+% ---------------------------------------------------------------------------
+% 五、自监督预训练与基础模型
+% ---------------------------------------------------------------------------
+
+@inproceedings{he2022mae,
+  author    = {He, Kaiming and Chen, Xinlei and Xie, Saining and Li, Yang and
+               Doll{\'a}r, Piotr and Girshick, Ross},
+  title     = {Masked Autoencoders Are Scalable Vision Learners},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {16000--16009},
+  year      = {2022}
+}
+
+@inproceedings{chen2020simclr,
+  author    = {Chen, Ting and Kornblith, Simon and Norouzi, Mohammad and Hinton, Geoffrey},
+  title     = {A Simple Framework for Contrastive Learning of Visual Representations},
+  booktitle = {Proc. Int. Conf. Machine Learning (ICML)},
+  pages     = {1597--1607},
+  year      = {2020}
+}
+
+@inproceedings{pillai2025papagei,
+  author    = {Pillai, Arvind and Spathis, Dimitris and Kawsar, Fahim and
+               Malekzadeh, Mohammad},
+  title     = {{PaPaGei}: Open Foundation Models for Optical Physiological Signals},
+  booktitle = {Proc. Int. Conf. Learning Representations (ICLR)},
+  year      = {2025}
+}
+
+@inproceedings{lee2026himae,
+  author    = {Lee, Simon A. and Tanade, Cyrus and Zhou, Hao and Lee, Juhyeon and
+               Thukral, Megha and Khan, Md Sazzad Hissain and Chun, Keum San and
+               Lu, Baiying and Gwak, Migyeong and Morshed, Mehrab and
+               Nathan, Viswam and Rahman, Md Mahbubur and Zhu, Li and
+               Venkatraman, Subramaniam and Desai, Sharanya Arcot},
+  title     = {{HiMAE}: Hierarchical Masked Autoencoders Discover Resolution-Specific
+               Structure in Wearable Time Series},
+  booktitle = {Proc. Int. Conf. Learning Representations (ICLR)},
+  year      = {2026}
+}
+
+@misc{thukral2026wavelet,
+  author = {Thukral, Megha and Tanade, Cyrus and Lee, Simon A. and Lee, Juhyeon and
+            Zhou, Hao and Chun, Keum San and Gwak, Migyeong and Nathan, Viswam and
+            Rahman, Md Mahbubur and Zhu, Li and Morshed, Mehrab Bin and
+            Venkatraman, Subramaniam and Desai, Sharanya Arcot},
+  title  = {Wavelet-Driven Masked Multiscale Reconstruction for {PPG} Foundation Models},
+  year   = {2026},
+  note   = {arXiv:2601.12215}
+}
+
+@misc{zhou2026physiology,
+  author = {Zhou, Hao and Lee, Simon A. and Tanade, Cyrus and Chun, Keum San and
+            Lee, Juhyeon and Gwak, Migyeong and Thukral, Megha and Sung, Justin and
+            Hwang, Eugene and Morshed, Mehrab Bin and Zhu, Li and Nathan, Viswam and
+            Rahman, Md Mahbubur and Venkatraman, Subramaniam and Desai, Sharanya Arcot},
+  title  = {Physiology-Aware Masked Cross-Modal Reconstruction for Biosignal
+            Representation Learning},
+  year   = {2026},
+  note   = {arXiv:2605.00973}
+}
+
+@misc{nie2025anyppg,
+  author = {Nie, Guangkun and Fang, Xiaocheng and Tang, Gongzheng and Xiao, Yujie and
+            Li, Jun and Liu, Bo and Li, Hongyan and Hong, Shenda},
+  title  = {{AnyPPG}: An {ECG}-Guided {PPG} Foundation Model Trained on Over
+            100,000 Hours of Recordings for Holistic Health Profiling},
+  year   = {2025},
+  note   = {arXiv:2511.01747}
+}
+
+@misc{davies2024interpretable,
+  author = {Davies, Harry J. and Monsen, James and Mandic, Danilo P.},
+  title  = {Interpretable Pre-Trained Transformers for Heart Time-Series Data},
+  year   = {2024},
+  note   = {arXiv:2407.20775}
+}
+
+@inproceedings{sameh2026beat,
+  author    = {Sameh, Ahmed and Wilson, Nolan and Enderlein, Max and
+               Varatharajah, Yogatheesan},
+  title     = {Beat-Synchronous Tokenization for {ECG} Transformers},
+  booktitle = {Proc. IEEE Int. Workshop Machine Learning for Signal Processing (MLSP)},
+  year      = {2026}
+}
+
+% ---------------------------------------------------------------------------
+% 六、常用数据集
+% ---------------------------------------------------------------------------
+
+@article{johnson2016mimic,
+  author  = {Johnson, Alistair E. W. and Pollard, Tom J. and Shen, Lu and
+             Lehman, Li-wei H. and Feng, Mengling and Ghassemi, Mohammad and
+             Moody, Benjamin and Szolovits, Peter and Celi, Leo Anthony and
+             Mark, Roger G.},
+  title   = {{MIMIC-III}, a Freely Accessible Critical Care Database},
+  journal = {Scientific Data},
+  volume  = {3},
+  pages   = {160035},
+  year    = {2016}
+}
+
+@article{lee2022vitaldb,
+  author  = {Lee, Hyung-Chul and Park, Yoonsang and Yoon, Soo Bin and Yang, Seong Mi and
+             Park, Dongnyeok and Jung, Chul-Woo},
+  title   = {{VitalDB}, a High-Fidelity Multi-Parameter Vital Signs Database in
+             Surgical Patients},
+  journal = {Scientific Data},
+  volume  = {9},
+  pages   = {279},
+  year    = {2022}
+}
+
+@article{liang2018ppg,
+  author  = {Liang, Yongbo and Chen, Zhencheng and Ward, Rabab and Elgendi, Mohamed},
+  title   = {A New, Short-Recorded Photoplethysmogram Dataset for Blood Pressure
+             Monitoring in {China}},
+  journal = {Scientific Data},
+  volume  = {5},
+  pages   = {180020},
+  year    = {2018}
+}
+
+@misc{toye2023vital,
+  author       = {Toye, Pieter-Jan},
+  title        = {Vital Videos: A Dataset of Videos with {PPG} and Blood Pressure
+                  Ground Truths},
+  howpublished = {arXiv preprint arXiv:2306.11891},
+  year         = {2023}
+}
+
+@inproceedings{schmidt2018wesad,
+  author    = {Schmidt, Philip and Reiss, Attila and Duerichen, Robert and
+               Marberger, Claus and Van Laerhoven, Kristof},
+  title     = {Introducing {WESAD}, a Multimodal Dataset for Wearable Stress and
+               Affect Detection},
+  booktitle = {Proc. 20th ACM Int. Conf. Multimodal Interaction (ICMI)},
+  pages     = {400--408},
+  year      = {2018}
+}
+
+@article{reiss2019dalia,
+  author  = {Reiss, Attila and Indlekofer, Ina and Schmidt, Philip and
+             Van Laerhoven, Kristof},
+  title   = {Deep {PPG}: Large-Scale Heart Rate Estimation with Convolutional
+             Neural Networks},
+  journal = {Sensors},
+  volume  = {19},
+  number  = {14},
+  pages   = {3079},
+  year    = {2019}
+}
+
+@article{zhang2018nsrr,
+  author  = {Zhang, Guo-Qiang and others},
+  title   = {The {National} {Sleep} {Research} {Resource}: Towards a Sleep Data
+             Commons},
+  journal = {Journal of the American Medical Informatics Association},
+  volume  = {25},
+  number  = {10},
+  pages   = {1351--1358},
+  year    = {2018}
+}
+
+@article{obrien1993bhs,
+  author  = {O'Brien, Eoin and others},
+  title   = {The {British} {Hypertension} {Society} Protocol for the Evaluation
+             of Blood Pressure Measuring Devices},
+  journal = {Journal of Hypertension},
+  volume  = {11},
+  number  = {Suppl. 2},
+  pages   = {S43--S62},
+  year    = {1993}
+}
+
+@misc{aami2013standard,
+  author       = {{Association for the Advancement of Medical Instrumentation}},
+  title        = {Non-Invasive Sphygmomanometers---Part 2: Clinical Investigation
+                  of Automated Measurement Type},
+  howpublished = {ANSI/AAMI/ISO 81060-2:2013},
+  year         = {2013}
+}
+
+% ---------------------------------------------------------------------------
+% 七、团队工作（已录用 / 已公开）
+% ---------------------------------------------------------------------------
+
+@inproceedings{tang2026sifpbpnet,
+  author    = {Tang, Shuailong and Li, Xiaoyu and Xie, Donglin and Chen, Wei and
+               Zhu, Guangpu and Li, Yelei and Zheng, Yali},
+  title     = {{SIFPBPNet}: A Dual-Path Network for Wearable and Cuffless Blood
+               Pressure Estimation via Individualized Steady-State Representation},
+  booktitle = {Proc. 48th Annu. Int. Conf. IEEE Eng. Med. Biol. Soc. (EMBC)},
+  address   = {Toronto, Canada},
+  year      = {2026}
+}
+
+% ---------------------------------------------------------------------------
+% 八、待补充（来自 papers/ 的新文献接在这里）
+% ---------------------------------------------------------------------------
+
+% 新条目请加在此行下方，保持「键名 + 完整字段」。
+% 需要核对的地方用行尾注释标 TODO，例如：
+%   pages = {1--10},  % TODO 核对页码

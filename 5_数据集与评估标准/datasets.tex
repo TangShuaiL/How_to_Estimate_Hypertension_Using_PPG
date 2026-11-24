@@ -1,0 +1,67 @@
+\section{数据集与评估标准}
+\label{sec:datasets}
+
+\subsection{常用数据集}
+\label{sec:dataset}
+
+\cref{tab:datasets}汇总了由 PPG 估计血压常用的公开数据集，它们的采集场景差别明显。VitalDB 与 MIMIC-III 取自手术室与 ICU，参考血压为同步的动脉线，标签连续、时间分辨率高，但人群的血压分布偏病理，向健康人群迁移时需重新验证\cite{lee2022vitaldb,johnson2016mimic}。Aurora-BP、PPG-BP 与 VV 以袖带测量为参考，多为静息状态下的短时记录，适合片段级回归\cite{mieloszyk2022comparison,liang2018ppg,toye2023vital}；其中 Aurora-BP 同步采集 PPG、ECG 与动脉张力，并覆盖卧、坐、站等体位，是腕表场景下少见的带标签数据。总体而言，连续参考的数据集中在临床监护场景，袖带参考的数据偏静息单次测量，能够反映日常活动状态的公开数据仍然稀缺。
+
+\begin{table}[t]
+\centering
+\caption{常用公开数据集及其参考血压来源}
+\label{tab:datasets}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+数据集 & 受试者 & 时长 (h) & 采样率 (Hz) & 位置 / 标签 \\
+\midrule
+VitalDB & 5\,866 & 17\,355 & 500 & 指端 / ABP \\
+MIMIC-III & 5\,596 & 19\,990 & 125 & 指端 / ABP \\
+Aurora-BP & 1\,206 & -- & -- & 腕部 / 袖带 \\
+PPG-BP & 219 & -- & 1\,000 & 指端 / 袖带 \\
+VV (SkinTone) & 231 & -- & 60 & 指端 / 袖带 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{评价指标}
+\label{sec:metrics}
+
+设 $\hat{y}_i$、$y_i$ 为第 $i$ 个样本的估计值与参考值，$N$ 为样本数，则平均绝对误差与均方根误差定义为
+\begin{equation}
+\mathrm{MAE}=\frac{1}{N}\sum_{i=1}^{N}\left|\hat{y}_{i}-y_{i}\right|,
+\end{equation}
+\begin{equation}
+\mathrm{RMSE}=\sqrt{\frac{1}{N}\sum_{i=1}^{N}\left(\hat{y}_{i}-y_{i}\right)^{2}}.
+\end{equation}
+一致性分析报告误差均值（ME）、标准差（SD）与 Bland--Altman 的 95\% 一致性界限；SBP 与 DBP 应分别给出，不能只报二者的平均。
+
+临床可接受性常借用 BHS 与 AAMI/ISO 81060-2 的判据（\cref{tab:standards}）。BHS 按误差落在 $\pm5$、$\pm10$、$\pm15$\,mmHg 内的累积百分比分 A--D 四级，SBP 与 DBP 分别评级、取较差者；AAMI/ISO 81060-2 要求 ME $\le5$\,mmHg、SD $\le8$\,mmHg，受试者不少于 85 人、每人至少 3 组与听诊参考的配对测量\cite{obrien1993bhs,aami2013standard}。两者均以听诊为参考，而PPG研究多以商用袖带电子血压计提供标签，参考值本身就有误差，需注意协议与人群构成的差异。
+
+\begin{table}[t]
+\centering
+\caption{BHS 分级与 AAMI/ISO 81060-2 判据}
+\label{tab:standards}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+标准 & 等级 & $\le5$\,mmHg & $\le10$\,mmHg & $\le15$\,mmHg \\
+\midrule
+BHS & A & 60\% & 85\% & 95\% \\
+    & B & 50\% & 75\% & 90\% \\
+    & C & 40\% & 65\% & 85\% \\
+    & D & $<$40\% & $<$65\% & $<$85\% \\
+\midrule
+AAMI/ISO & \multicolumn{4}{c}{ME $\le5$\,mmHg\quad SD $\le8$\,mmHg} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{验证协议与可复现性}
+\label{sec:protocol}
+
+评估结论对划分方式高度敏感：片段级随机划分会让同一受试者的片段同时出现在训练与测试集，系统性高估性能，只有受试者独立划分才反映跨个体泛化；小样本常用留一受试者交叉验证，跨数据集验证则进一步检验跨设备、跨人群的迁移性。
+
+校准协议同样影响结论：无论单点校准、按时段重复校准还是使用历史片段，校准数据都必须与测试集严格分离，否则指标会明显偏乐观。因此比较方法时应同时报告划分方式、校准数据来源与受试者数量，而不只是误差均值。
